@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Perfect Circle Drawer",
+  "version": "1.0.0",
+  "description": "Automatically draws a mathematically perfect circle on neal.fun/perfect-circle/ with customizable radius, speed, and point density.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://neal.fun/perfect-circle/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

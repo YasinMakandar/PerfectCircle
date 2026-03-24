@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 280px;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 18px;
+    }
+
+    .circle-icon {
+      display: block;
+      margin: 0 auto 14px;
+      width: 50px;
+      height: 50px;
+      border: 3px solid #4fc3f7;
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    .control-group {
+      margin-bottom: 14px;
+    }
+
+    .control-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: #aaa;
+    }
+
+    .control-group label span {
+      color: #4fc3f7;
+      font-weight: bold;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #2a2a3e;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #4fc3f7;
+      cursor: pointer;
+      border: 2px solid #0f0f1a;
+    }
+
+    #drawBtn {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #0f0f1a;
+      background: linear-gradient(135deg, #4fc3f7, #00e676);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    #drawBtn:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    #drawBtn:active {
+      transform: scale(0.98);
+    }
+
+    #status {
+      text-align: center;
+      font-size: 11px;
+      margin-top: 10px;
+      min-height: 16px;
+      color: #aaa;
+    }
+
+    #status.error {
+      color: #ef5350;
+    }
+
+    #status.success {
+      color: #00e676;
+    }
+
+    .tip {
+      margin-top: 14px;
+      padding: 8px 10px;
+      background: #1a1a2e;
+      border-radius: 6px;
+      font-size: 10px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-icon"></div>
+  <h1>Perfect Circle</h1>
+  <p class="subtitle">Auto-draw a flawless circle</p>
+
+  <div class="control-group">
+    <label>Radius <span id="radiusVal">40%</span></label>
+    <input type="range" id="radius" min="15" max="48" value="40">
+  </div>
+
+  <div class="control-group">
+    <label>Draw Speed <span id="speedVal">3 ms</span></label>
+    <input type="range" id="speed" min="1" max="20" value="3">
+  </div>
+
+  <div class="control-group">
+    <label>Points <span id="pointsVal">500</span></label>
+    <input type="range" id="points" min="100" max="1500" value="500" step="50">
+  </div>
+
+  <button id="drawBtn">⭕ Draw Perfect Circle</button>
+  <div id="status"></div>
+
+  <div class="tip">
+    💡 Make sure the game is ready for drawing before clicking.
+    You can also press <b>Shift + D</b> on the page.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
